@@ -4,7 +4,9 @@ import type { User } from '$lib/auth';
 
 // for information about these interfaces
 declare global {
-	// interface Error {}
+	interface Error {
+		msg:string
+	}
 	namespace App {
 		
 		 interface Locals {

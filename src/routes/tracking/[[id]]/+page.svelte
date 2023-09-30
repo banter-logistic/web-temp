@@ -1,31 +1,27 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-
-  export let data 
+  export let data;
 
   $: aktif = data.id;
-  
-  let result = ''
-  
-  let no_resi = ''
-  
-  const resi_dummy = 'JTG-1-1-0003'
-  
+
+  let result = "";
+
+  let no_resi = "";
+
+  const resi_dummy = "JTG-1-1-0003";
+
   function trackResi() {
     if (no_resi == resi_dummy) {
-      result = 'Semarang'
+      result = "Semarang";
     } else {
-      result = 'No Resi Tidak Ditemukan'
+      result = "No Resi Tidak Ditemukan";
     }
   }
-  
+
   function toogleform(formName: string): void {
     aktif = formName;
-
-
   }
-  
 </script>
 
 <section class=" relative -mb-4 mt-12 flex flex-col mx-2">
@@ -36,12 +32,16 @@
     <div
       class="bg-[#F0F4F4] w-[20rem] h-20 items-center flex justify-center gap-4 rounded-t-2xl drop-shadow-md"
     >
-      <button on:click={() => toogleform("tracking")} class="btn btn-info">
-        Tracking
-      </button>
-      <button on:click={() => toogleform("check")}  class="btn btn-info">
-        CheckOngkir
-      </button>
+      <button
+        on:click={() => toogleform("tracking")}
+        class="bg-[#148CEB] rounded-xl text-white px-7 py-4 hover:bg-[#1A71B8]"
+        >Tracking</button
+      >
+      <button
+        on:click={() => toogleform("check")}
+        class="bg-[#148CEB] rounded-xl text-white px-5 py-4 hover:bg-[#1A71B8]"
+        >Check Ongkir</button
+      >
     </div>
   </div>
 
@@ -63,7 +63,12 @@
               class="input input-info sm:w-[20rem] w-[10rem]"
               bind:value={no_resi}
             />
-            <button class="btn btn-info ml-8 text-white/80" on:click={trackResi}> Track </button>
+            <button
+              class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8]"
+              on:click={trackResi}
+            >
+              Track
+            </button>
           </label>
         </div>
       </div>
@@ -80,7 +85,7 @@
   {#if aktif === "check"}
     <div class=" relative flex justify-center">
       <div
-        class="bg-[#F0F4F4] w-[64rem]  items-center flex justify-center gap-4 rounded-2xl drop-shadow-md"
+        class="bg-[#F0F4F4] w-[64rem] items-center flex justify-center gap-4 rounded-2xl drop-shadow-md"
       >
         <form action="" class="flex flex-wrap py-8 pl-8 gap-8">
           <label for="asal" class="block">
@@ -155,7 +160,11 @@
               placeholder="Masukkan Berat barang "
               class="input input-info w-[8rem]"
             />
-            <button class="btn btn-info ml-8 text-white/80"> Search </button>
+            <button
+              class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8] ml-3"
+            >
+              Search
+            </button>
           </label>
         </form>
 

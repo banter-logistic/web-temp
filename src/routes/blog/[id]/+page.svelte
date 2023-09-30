@@ -1,32 +1,33 @@
 <script>
-  import {blog as data } from "$lib/data/dataBlog.js"
-// export let data
+  import {blog as blogs } from "$lib/data/dataBlog.js"
+
+export let data
+
 </script>
 
-{#each data  as d }
-  
+  <div class="w-[85%] mx-auto ">
  <div class="container">
       <div class="top">
         <div class="info">
-          <h1 class="title">{d.title}</h1>
+          <h1 class="title">{data.res.title}</h1>
           <p class="desc">
-            {d.desc}
+            {data.res.desc}
             
           </p>
           <div class="author">
             <img
-              src={d.img}
+              src={data.res.img}
               alt=""
               width={40}
               height={40}
               class="avatar"
             />
-            <span class="user">{d.user}</span>
+            <span class="user">{data.res.user}</span>
           </div>
         </div>
         <div class="imageContainer">
           <img
-            src={d.img}
+            src={data.res.img}
             alt=""
             class="image"
           />
@@ -34,14 +35,13 @@
       </div>
       <div class="content">
         <p class="text">
-          {d.content}
+          {data.res.content}
            
         </p>
       </div>
     </div>
 
-    {/each}
-
+</div>
 
     <style>
 

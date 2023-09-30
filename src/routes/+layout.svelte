@@ -51,6 +51,9 @@
         <li>
           <a class="hover:text-blue-300" href="/about">Tentang Kami</a>
         </li>
+        <li>
+          <a class="hover:text-blue-300" href="/blog">Blog</a>
+        </li>
       </ul>
     </div>
     <div>
@@ -100,6 +103,9 @@
 
           <li>
             <a class="hover:text-blue-300" href="/about">Tentang Kami</a>
+          </li>
+          <li>
+            <a class="hover:text-blue-300" href="/blog">Blog</a>
           </li>
         </ul>
       </div>

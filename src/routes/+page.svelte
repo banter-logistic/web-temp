@@ -66,12 +66,12 @@
       <div
         class="flex  justify-center  items-center  gap-[1rem] w-[18rem] h-[3.5rem] bg-white/30 backdrop-blur-md shadow-md sm:ml-[18%] ml-0  rounded-t-xl"
       >
-        <button on:click={()=>toogleform('tracking')} class="btn btn-info text-white/80 ">Tracking</button>
-        <button on:click={()=>toogleform('checkongkir')}  class="btn btn-info text-white/80">Check Ongkir</button>
+        <button on:click={()=>toogleform('tracking')} class="bg-[#148CEB] rounded-xl text-white px-7 py-2 hover:bg-[#1A71B8]">Tracking</button>
+        <button on:click={()=>toogleform('checkongkir')}  class="bg-[#148CEB] rounded-xl text-white px-5 py-2 hover:bg-[#1A71B8]">Check Ongkir</button>
       </div>
       {#if active==='tracking'}
          <div
-        class="   h-[8.375rem] flex items-center justify-center bg-white/30 backdrop-blur-md shadow-md px-8 sm:rounded-tl-[0rem] rounded-tl-[0.625rem]  sm:ml-[18%] ml-0 rounded-tr-[0.625rem] rounded-br-[0.625rem] rounded-bl-[0.625rem]  "
+        class=" h-[8.375rem] flex items-center justify-center bg-white/30 backdrop-blur-md shadow-md px-8 sm:rounded-tl-[0rem] rounded-tl-[0.625rem]  sm:ml-[18%] ml-0 rounded-tr-[0.625rem] rounded-br-[0.625rem] rounded-bl-[0.625rem]  "
       >
       
         <label for="tracking" class="block">
@@ -86,7 +86,7 @@
               class="input input-info sm:w-[20rem] w-[10rem]"
               bind:value={no_resi}
             />
-            <button class="btn btn-info ml-8 text-white/80" on:click={trackResi} > Track </button> 
+            <button class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8]  " on:click={trackResi} > Track </button> 
           </label>
 
         
@@ -123,7 +123,7 @@
           placeholder="Type here"
           class="input input-bordered input-info w-[7rem] "
         />
-        <button class="btn btn-info ml-4 text-white/80"> Search </button>
+        <button class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8] ml-3"> Search </button>
         </label>
         </form>
       </div>
@@ -200,11 +200,11 @@
 
   <section class="mt-[15%]">
     
-    <div class=" w-[75%] mx-auto flex flex-col gap-8 justify-center">
+    <div class=" w-[75%] mx-auto flex flex-col gap-4 justify-center">
       <p class="text-[#14EBDE] text-xl">Latest News</p>
       <div class="flex justify-between">
-        <h1 class="text-4xl font-bold text-[#2C3E50]">Latest Update</h1>
-        <a href="/blog" class="bg-[#148CEB] rounded-full text-white px-5 py-2 hover:bg-[#1A71B8]"> View More </a>
+        <h1 class="text-4xl max-md:text-2xl font-bold text-[#2C3E50]">Latest Update</h1>
+        <a href="/blog" class="bg-[#148CEB] rounded-full text-white px-4 py-2 hover:bg-[#1A71B8]"> View More </a>
       </div>
     </div>
 
