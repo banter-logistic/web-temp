@@ -5,23 +5,55 @@
 
   $: aktif = data.id;
 
-  let result = "";
-
+  let resultTrack = "";
+  
   let no_resi = "";
+  let asal =''
+  let ke =''
+  let berat = 0
+  let hasil : number
+  let layanan = ''
 
   const resi_dummy = "JTG-1-1-0003";
 
   function trackResi() {
     if (no_resi == resi_dummy) {
-      result = "Semarang";
+      resultTrack = "Semarang";
     } else {
-      result = "No Resi Tidak Ditemukan";
+      resultTrack = "No Resi Tidak Ditemukan";
     }
   }
 
   function toogleform(formName: string): void {
     aktif = formName;
   }
+
+  function calculate(){
+    
+    layanan = 'BanterExprees'
+    hasil = berat  * 5000
+    
+  }
+
+  onMount(()=>{ 
+    const y = new URLSearchParams(location.search)
+    const no_resiParam = y.get("no_resi");
+    no_resi = no_resiParam ? no_resiParam : "";
+
+
+    const x = new URLSearchParams(location.search)
+     asal = x.get("asal") ?? ""
+     ke = x.get("ke")??"" 
+     const beratParam = x.get("berat");
+    berat = beratParam ? parseInt(beratParam) : 0; 
+    if(no_resiParam){
+      trackResi()
+    }else{
+      calculate()
+    }
+
+  })
+
 </script>
 
 <section class=" relative -mb-4 mt-12 flex flex-col mx-2">
@@ -62,6 +94,7 @@
               placeholder="13 Digit "
               class="input input-info sm:w-[20rem] w-[10rem]"
               bind:value={no_resi}
+              required
             />
             <button
               class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8]"
@@ -87,16 +120,18 @@
       <div
         class="bg-[#F0F4F4] w-[64rem] items-center flex justify-center gap-4 rounded-2xl drop-shadow-md"
       >
-        <form action="" class="flex flex-wrap py-8 pl-8 gap-8">
+        <div class="flex flex-wrap py-8 pl-8 gap-8">
           <label for="asal" class="block">
             <span class=" block text-sm font-medium text-slate-700 pb-1">
               Asal
             </span>
             <input
+            bind:value={asal}
               type="text"
               id="asal"
               placeholder="Masukkan Asal Pengiriman"
               class="input input-info w-[15rem]"
+              required
             />
           </label>
           <label for="tujuan" class="block">
@@ -104,6 +139,8 @@
               >Tujuan
             </span>
             <input
+              required
+            bind:value={ke}
               type="text"
               id="tujuan"
               placeholder="Masukkan Tujuan Pengiriman "
@@ -115,10 +152,12 @@
               >Berat
             </span>
             <input
+            bind:value={berat}
               type="number"
               id="berat"
               placeholder="Masukkan Berat barang "
               class="input input-info w-[8rem]"
+              required
             />
           </label>
           <label for="berat" class="block">
@@ -161,12 +200,12 @@
               class="input input-info w-[8rem]"
             />
             <button
-              class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8] ml-3"
+              class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8] ml-3" on:click={calculate}
             >
               Search
             </button>
           </label>
-        </form>
+      </div>
 
         <div />
       </div>
@@ -176,15 +215,16 @@
     <div
       class="bg-[#F0F4F4] w-[64rem] h-full pl-20 py-4 flex gap-4 rounded-2xl drop-shadow-md"
     >
-      {#if aktif === "tracking"}
+      {#if aktif === "tracking" && resultTrack!== ''}
         <div>
           <h1 class="font-bold text-2xl">Hasil Pencarian :</h1>
-          <div class="flex flex-col justify-start items-start">{result}</div>
+          <div class="flex flex-col justify-start items-start">{resultTrack}</div>
         </div>
       {/if}
-      {#if aktif === "checkOngkir"}
+      {#if aktif === "check" && hasil !== 0  }
         <div>
           <h1 class="font-bold text-2xl">Hasil Perhitungan :</h1>
+          <div class="flex flex-col justify-start items-start">{hasil}</div>
         </div>
       {/if}
       <div />

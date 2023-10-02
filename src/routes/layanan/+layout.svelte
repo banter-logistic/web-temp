@@ -1,5 +1,5 @@
 <header>
-  <div class="relative w-full sm:h-[12rem] h-[10rem] md:h-[20rem]">
+  <div class="relative w-full  sm:h-[12rem] h-[8rem] md:h-[20rem]">
     <img
       src="../layanan.svg"
       alt="BackgroundImage"

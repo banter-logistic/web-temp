@@ -1,5 +1,5 @@
 <script>
-  import {blog as blogs } from "$lib/data/dataBlog.js"
+  
 
 export let data
 
@@ -9,18 +9,18 @@ export let data
  <div class="container">
       <div class="top">
         <div class="info">
-          <h1 class="title">{data.res.title}</h1>
-          <p class="desc">
+          <h1 class="font-bold md:text-2xl sm:text-xl text-xl">{data.res.title}</h1>
+          <p class="text-[#79797C] md:text-xl text-sm sm:text-lg">
             {data.res.desc}
             
           </p>
-          <div class="author">
+          <div class="author ">
             <img
-              src={data.res.img}
+              src={data.res.userProfile}
               alt=""
               width={40}
               height={40}
-              class="avatar"
+              class="avatar "
             />
             <span class="user">{data.res.user}</span>
           </div>
@@ -29,12 +29,12 @@ export let data
           <img
             src={data.res.img}
             alt=""
-            class="image"
+            class="object-cover w-full h-[20rem]  rounded-lg"
           />
         </div>
       </div>
       <div class="content">
-        <p class="text">
+        <p class="text indent-20">
           {data.res.content}
            
         </p>
@@ -46,11 +46,13 @@ export let data
     <style>
 
       .container {
-  margin-top: 100px;
+  margin-top: 50px;
+  padding: 20px;
 }
 
 .top {
   display: flex;
+  width:100%;
 }
 
 .info {
@@ -60,41 +62,40 @@ export let data
   justify-content: space-between;
 }
 
-.title{
-  font-size: 40px;
-}
 
-.desc{
-  font-size: 18px;
-  font-weight: 300;
-}
 
 .author {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 500;
 }
 
 .avatar {
   object-fit: cover;
   border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .imageContainer {
   flex: 1;
-  height: 300px;
   position: relative;
 }
 
-.image {
-  object-fit: cover;
-}
+
 
 .content {
   margin-top: 50px;
-  font-size: 20px;
-  font-weight: 300;
+  display: flex;
+
+}
+.text{
+   font-size: 20px;
+  font-weight: 400;
   color: #999;
   text-align: justify;
 }
+
+
     </style>

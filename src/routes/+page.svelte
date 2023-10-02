@@ -16,18 +16,34 @@
   let result = ''
   
   let no_resi = ''
+
+  let asal = ''
+  let ke = ''
+  let berat = 0 
   
   const resi_dummy = 'JTG-1-1-0003'
+  let hasil = 0 ;
   
   function trackResi() {
-    if (no_resi == resi_dummy) {
-      result = 'Semarang'
+   if (no_resi.trim() == "") {
+      alert("diisi dulu form nya ")
+      
     } else {
-      result = 'No Resi Tidak Ditemukan'
+      // Navigasi ke halaman tujuan dengan no_resi sebagai parameter query
+      const url = `/tracking?no_resi=${encodeURIComponent(no_resi)}`;
+      window.location.href = url;
     }
   }
   
-  
+  function calculate(){
+    if (asal.trim() == ""||ke.trim() == "") {
+      alert("diisi dulu form nya ")
+      
+    }else{
+    const url = `/tracking/check?asal=${asal}&ke=${ke}&berat=${berat}`
+    window.location.href = url 
+    }
+  }
 
 
   
@@ -70,7 +86,8 @@
         <button on:click={()=>toogleform('checkongkir')}  class="bg-[#148CEB] rounded-xl text-white px-5 py-2 hover:bg-[#1A71B8]">Check Ongkir</button>
       </div>
       {#if active==='tracking'}
-         <div
+      
+         <form on:submit={trackResi}
         class=" h-[8.375rem] flex items-center justify-center bg-white/30 backdrop-blur-md shadow-md px-8 sm:rounded-tl-[0rem] rounded-tl-[0.625rem]  sm:ml-[18%] ml-0 rounded-tr-[0.625rem] rounded-br-[0.625rem] rounded-bl-[0.625rem]  "
       >
       
@@ -85,12 +102,13 @@
               placeholder="13 Digit "
               class="input input-info sm:w-[20rem] w-[10rem]"
               bind:value={no_resi}
+              required
             />
-            <button class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8]  " on:click={trackResi} > Track </button> 
+            <button class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8]  " type="submit" > Track </button> 
           </label>
 
         
-      </div>
+      </form>
       {/if}
       {#if active === 'checkongkir'}
          <div
@@ -102,28 +120,36 @@
         <input
           type="text"
           id="asal"
+          bind:value={asal}
           placeholder="Type here"
           class="input input-bordered input-info w-[15rem] "
+          required
         />
         </label>
        <label for="Tujuan" class="block">
           <span class="block text-md font-medium text-slate-700"> Tujuan</span>
         <input
           type="text"
+          bind:value={ke}
           id="Tujuan"
           placeholder="Type here"
           class="input input-bordered input-info w-[15rem] "
+          required
+
         />
         </label>
         <label for="Berat" class="block">
           <span class="block text-md font-medium text-slate-700"> Berat</span>
         <input
+        bind:value={berat}
           type="number"
           id="Berat"
           placeholder="Type here"
           class="input input-bordered input-info w-[7rem] "
+          required
+
         />
-        <button class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8] ml-3"> Search </button>
+        <button class="bg-[#148CEB] rounded-xl text-white px-7 py-3 hover:bg-[#1A71B8] ml-3" on:click={calculate}> Search </button>
         </label>
         </form>
       </div>
