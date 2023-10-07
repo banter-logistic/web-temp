@@ -20,7 +20,7 @@
         <img src="../Banter-image/calendar.png" alt="" class="w-[1.5rem] h-[1.5rem]">
         <p>{bg.date}</p>
         </div>
-        <h1 class="font-semibold sm:text-lg  text-md ">{bg.title} {bg.id}</h1>
+        <h1 class="font-semibold sm:text-lg  text-md text-center ">{bg.title} {bg.id}</h1>
         <p class="text-justify sm:text-md text-sm px-4 text-ellipsis ">{bg.desc}</p>
     </a>
 

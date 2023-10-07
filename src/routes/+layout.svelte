@@ -119,14 +119,24 @@
     class="md:flex grid md:justify-between justify-start gap-8 w-full md:p-24 p-12"
   >
     <div class="grid gap-2 w-60">
-      <!-- <img src="../Banter-image/Logo.png" alt="" class="bg-white rounded-full "/> -->
-      <h1>Logo</h1>
-      <p class="text-lg text-[#F0F4F4]">quotes</p>
-      <div class="w-14 h-9 flex gap-8">
-        <img src="../Banter-image/instagram.png" alt="" />
-        <img src="../Banter-image/facebook.png" alt="" />
-        <img src="../Banter-image/google-plus.png" alt="" />
-        <img src="../Banter-image/tik-tok.png" alt="" />
+       <img src="../Banter-image/logo.png" alt="" class="bg-white rounded-2xl w-12 h-14"/>
+      
+      <p class="text-lg text-[#F0F4F4]">let's make dream come true </p>
+      <div class=" flex gap-8">
+        <a href="https://www.instagram.com/banterinaja/" target="_blank">
+        <img src="../Banter-image/instagram.png" alt="instagram" /> 
+        </a>
+        <a href="https://www.facebook.com/banter" target="_blank"> 
+        <img src="../Banter-image/facebook.png" alt="facebook" />
+         </a>
+
+         <a href="https://api.whatsapp.com/send?phone=628112788199&text=p balap " target="_blank">
+        <img src="../Banter-image/google-plus.png" alt="whatsapp" />
+        </a>
+
+        <a href="https://www.tiktok.com/@banterinaja" target="_blank">
+        <img src="../Banter-image/tik-tok.png" alt="tiktok" class=""/>
+        </a>
       </div>
     </div>
     <div class="grid gap-2 text-[#F0F4F4]">
