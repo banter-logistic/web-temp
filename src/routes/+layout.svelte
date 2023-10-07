@@ -178,7 +178,7 @@
           class="w-8 h-8 flex items-center"
         />
         <a
-          href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=office@banter.id"
+          href="mailto:office@banter.id?subject=Penawaran Harga&body=Apa penawaran harga hari ini ?"
           target="_blank">office@banter.id</a
         >
       </div>

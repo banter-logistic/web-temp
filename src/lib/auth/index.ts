@@ -10,7 +10,13 @@ interface Db {
   password: string
 }
 
-import { readFile, writeFile } from "fs/promises";
+import { readFile, writeFile, mkdir } from "fs/promises";
+import { existsSync } from "fs";
+
+if (!existsSync("src/lib/auth/db.json")) {
+  await mkdir("src/lib/auth",{ recursive: true })
+  await writeFile("src/lib/auth/db.json","[]")
+}
 
 const localDb = JSON.parse(await readFile('src/lib/auth/db.json','utf-8')) as [string,Db][]
 
