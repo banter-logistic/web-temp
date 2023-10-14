@@ -121,7 +121,7 @@
     <div class="grid gap-2 w-60">
        <img src="../Banter-image/logo.png" alt="" class="bg-white rounded-2xl w-12 h-14"/>
       
-      <p class="text-lg text-[#F0F4F4]">let's make dream come true </p>
+      <p class="text-lg text-[#F0F4F4]">Selangkah Menuju Indonesia  </p>
       <div class=" flex gap-8">
         <a href="https://www.instagram.com/banterinaja/" target="_blank">
         <img src="../Banter-image/instagram.png" alt="instagram" /> 

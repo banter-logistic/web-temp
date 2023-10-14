@@ -63,8 +63,8 @@
         <img src="../Banter-image/calendar.png" alt="" class="w-[1.5rem] h-[1.5rem]">
         <p>{bg.date}</p>
         </div>
-        <h1 class="font-semibold sm:text-lg  text-md ">{bg.title} {bg.id}</h1>
-        <p class="text-justify sm:text-md text-sm px-4 text-ellipsis ">{bg.desc}</p>
+        <h1 class="font-semibold sm:text-lg  px-4  text-md ">{bg.title} </h1>
+        <p class=" sm:text-md text-sm px-4 line-clamp-3">{bg.desc}</p>
     </a>
     </li>
 {/each}

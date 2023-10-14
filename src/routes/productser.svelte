@@ -59,7 +59,6 @@
     position: relative;
     width: 15rem;
     height: 19rem;
-   
     overflow: hidden;
     border-radius: 20px;
      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -85,19 +84,23 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    z-index: 10;
     /* edit the width to fit card */
     width: 100%;
-    height: 200px;
+    height: 100%;
     padding: 20px;
      background: rgba(20, 140, 235, 0.9);
     backdrop-filter: blur(20px);
-    border-top-left-radius: 20px;
     /* edit here to change the height of the content box */
-    transform: translateY(90px);
+    transform: translateY(200px);
     transition: transform 0.25s;
     color: white;
+    border-radius: 20px;
+    
+
   }
 
+  
   /* .card_content::before {
     content: "";
     position: absolute;
@@ -113,6 +116,8 @@
  
   } */
 
+
+
   .card_title {
     
     font-size: 1.25rem;
@@ -123,20 +128,24 @@
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 10px;
+    
   }
 
   .card_description {
     font-size: 1rem;
     opacity: 0;
     transition: opacity 0.5s;
+    border-radius: 20px;
   }
 
   .card:hover .card_content {
     transform: translateY(0);
+    
   }
 
   .card:hover .card_description {
     opacity: 1;
     transition-delay: 0.25s;
+    
   }
 </style>

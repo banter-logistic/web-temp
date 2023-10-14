@@ -7,7 +7,7 @@
 </script>
 
  <Layout>
-  <div class=" w-[85%] mx-auto flex flex-wrap justify-center items-center gap-8 mt-16 border py-8">
+  <div class=" w-[85%] mx-auto flex flex-wrap justify-center items-center gap-8 mt-16 py-8">
   {#each blog as bg , i  }
 
   
@@ -15,13 +15,13 @@
     " >
         <img src={bg.img} alt="" class="w-[17rem] h-[8rem]  rounded-xl shadow-xl ">
         <div class="flex gap-4">
-        <img src="../Banter-image/profile-user.png" alt="" class="w-[1.5rem] h-[1.5rem]">
-        <p>{bg.user}</p>
+        <!-- <img src="../Banter-image/profile-user.png" alt="" class="w-[1.5rem] h-[1.5rem]">
+        <p>{bg.user}</p> -->
         <img src="../Banter-image/calendar.png" alt="" class="w-[1.5rem] h-[1.5rem]">
         <p>{bg.date}</p>
         </div>
-        <h1 class="font-semibold sm:text-lg  text-md text-center ">{bg.title} {bg.id}</h1>
-        <p class="text-justify sm:text-md text-sm px-4 text-ellipsis ">{bg.desc}</p>
+        <h1 class="font-semibold sm:text-lg  text-md px-2 ">{bg.title} </h1>
+        <p class=" sm:text-md text-sm px-2 line-clamp-4 text-justify ">{bg.content}</p>
     </a>
 
 
