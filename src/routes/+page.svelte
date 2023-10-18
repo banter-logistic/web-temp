@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Blog from "./blog.svelte";
+  import Seo from "$lib/seo.svelte";
+import Blog from "./blog.svelte";
   import Cek from "./cek.svelte";
   import Productser from "./productser.svelte";
   import Valued from "./valued.svelte";
@@ -239,3 +240,4 @@
     </div>
   </section>
 </body>
+<Seo title="BANTER | Home " description="BANTER Selangkah menuju Indonesia. BANTER adalah mitra andal untuk mempercepat bisnis Anda dengan solusi pengiriman inovatif. Dengan jaringan lokal yang solid dan teknologi canggih, kami menghadirkan layanan pengiriman yang efisien, aman, dan terpercaya. Tak hanya sekadar mengirim paket, kami mengirimkan kepercayaan dan ketenangan pikiran. Jadikan pengalaman pengiriman Anda lebih mudah, lebih cepat, dan lebih handal dengan BANTER." type="WebSite" />

@@ -1,3 +1,8 @@
+<script>
+
+  import Seo from "$lib/seo.svelte";
+
+</script>
 <section class="text-justify">
   <div
     class=" w-[85%] h-full gap-8 flex flex-col rounded-2xl shadow-2xl mx-auto md:p-20 p-10"
@@ -84,3 +89,7 @@
     </p>
   </div>
 </section>
+
+
+
+<Seo title="BANTER | About " type="WebPage" description="Banter Pengiriman adalah mitra pengiriman global yang memimpin industri. Kami didedikasikan untuk memberikan solusi pengiriman efisien dan terpercaya kepada pelanggan kami. Temui tim kami yang bersemangat dan kenali visi kami untuk mengubah cara dunia mengirimkan barang." />

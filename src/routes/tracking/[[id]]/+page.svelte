@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import Seo from "$lib/seo.svelte";
+import { onMount } from "svelte";
 
   export let data;
 
@@ -231,3 +232,5 @@
     </div>
   </div>
 </section>
+
+<Seo title="BANTER | Tracking " description="Lacak pengiriman Anda dengan BANTER. Gunakan layanan pelacakan kami yang andal dan transparan untuk mengikuti perjalanan paket Anda dari pintu ke pintu. Dengan teknologi mutakhir, kami memberikan akses real-time ke status pengiriman Anda. Pantau paket Anda dengan mudah, di mana saja, kapan saja, dan melalui berbagai perangkat. Kami memberikan ketenangan pikiran dengan informasi pelacakan yang jelas dan akurat." type="WebPage" />

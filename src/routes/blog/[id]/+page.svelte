@@ -27,7 +27,7 @@ export let data
           {data.res.content}
         </p> -->
         {#each data.res.content.split('\n') as d}
-        <p class="text-justify leading-6 indent-12 ">
+        <p class="text-justify leading-6 indent-12 mb-4">
           {d}
         </p>
         {/each}

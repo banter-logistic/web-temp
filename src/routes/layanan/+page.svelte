@@ -1,4 +1,6 @@
 <script>
+  import Seo from "$lib/seo.svelte";
+
 
   import Productser from "../productser.svelte";
   import Valued from "../valued.svelte";
@@ -45,3 +47,7 @@
     </div>
     
   </section>
+
+
+
+  <Seo title="BANTER | Layanan Pengiriman" type="WebPage" description="Banter Pengiriman menawarkan layanan pengiriman global yang handal dan efisien. Dengan jaringan luas dan teknologi canggih, kami memberikan solusi pengiriman terpercaya kepada pelanggan kami. Layanan kami mencakup pengiriman darat, udara, dan laut. Kami mengutamakan keamanan, kecepatan, dan keandalan dalam setiap pengiriman. Temui tim kami yang ahli dan percayakan pengiriman Anda kepada kami." />

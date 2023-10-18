@@ -2,6 +2,7 @@
   import Blog from "../blog.svelte";
   import Layout from "./layout.svelte"
   import { blog} from "$lib/data/dataBlog";
+  import Seo from "$lib/seo.svelte";
 
 
 </script>
@@ -30,3 +31,4 @@
     </div>
  </Layout>
 
+ <Seo title="" type="" description="" />
