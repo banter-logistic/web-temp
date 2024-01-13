@@ -5,10 +5,7 @@
   import { onMount } from "svelte";
   import { invalidateAll } from "$app/navigation";
   import { enhance } from "$app/forms";
-  export let data 
-  
-
- 
+  export let data;
 
   export let open = false;
   export let onClick = () => {
@@ -58,20 +55,49 @@
     </div>
     <div>
       {#if data.auth.isLoggedin}
-      <form action="/auth?/logout" method="post" use:enhance data-sveltekit-preload-data="off">
-    <button class="bg-[#148CEB] rounded-full text-white px-5 py-2 hover:bg-[#1A71B8]">Logout</button>
-</form>
-
-        {:else}
-        <button class="bg-[#148CEB] rounded-full text-white px-5 py-2 hover:bg-[#1A71B8]"><a
-        
-        href="/login"
-      >
-        Sign in
-      </a>
-      </button>
+        <div  class="dropdown dropdown-end">
+          <div
+            tabindex="0"
+            role="button"
+            class="btn btn-ghost btn-circle avatar"
+          >
+          
+            <div class="w-10 rounded-full">
+              <img
+                alt="Profile"
+                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              />
+            </div>
+          </div>
+          
+          <ul
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a href="/user" class="justify-between">
+                Profile
+              </a>
+            </li>
+            <li><a href="#">Pengiriman</a></li>
+            <li>
+              <form
+                action="/auth?/logout"
+                method="post"
+                use:enhance
+                data-sveltekit-preload-data="off"
+              >
+                <button>Logout</button
+                >
+              </form>
+            </li>
+          </ul>
+        </div>
+      {:else}
+        <button
+          class="bg-[#148CEB] rounded-full text-white px-5 py-2 hover:bg-[#1A71B8]"
+          ><a href="/login"> Sign in </a>
+        </button>
       {/if}
-      
     </div>
     <div class="lg:hidden sticky">
       <Hambuger {open} {onClick} />
@@ -119,23 +145,30 @@
     class="md:flex grid md:justify-between justify-start gap-8 w-full md:p-24 p-12"
   >
     <div class="grid gap-2 w-60">
-       <img src="../Banter-image/logo.png" alt="" class="bg-white rounded-2xl w-12 h-14"/>
-      
-      <p class="text-lg text-[#F0F4F4]">Selangkah Menuju Indonesia  </p>
+      <img
+        src="../Banter-image/logo.png"
+        alt=""
+        class="bg-white rounded-2xl w-12 h-14"
+      />
+
+      <p class="text-lg text-[#F0F4F4]">Selangkah Menuju Indonesia</p>
       <div class=" flex gap-8">
         <a href="https://www.instagram.com/banterinaja/" target="_blank">
-        <img src="../Banter-image/instagram.png" alt="instagram" /> 
+          <img src="../Banter-image/instagram.png" alt="instagram" />
         </a>
-        <a href="https://www.facebook.com/banter" target="_blank"> 
-        <img src="../Banter-image/facebook.png" alt="facebook" />
-         </a>
+        <a href="https://www.facebook.com/banter" target="_blank">
+          <img src="../Banter-image/facebook.png" alt="facebook" />
+        </a>
 
-         <a href="https://api.whatsapp.com/send?phone=628112788199&text=p balap " target="_blank">
-        <img src="../Banter-image/google-plus.png" alt="whatsapp" />
+        <a
+          href="https://api.whatsapp.com/send?phone=628112788199&text=p balap "
+          target="_blank"
+        >
+          <img src="../Banter-image/google-plus.png" alt="whatsapp" />
         </a>
 
         <a href="https://www.tiktok.com/@banterinaja" target="_blank">
-        <img src="../Banter-image/tik-tok.png" alt="tiktok" class=""/>
+          <img src="../Banter-image/tik-tok.png" alt="tiktok" class="" />
         </a>
       </div>
     </div>
